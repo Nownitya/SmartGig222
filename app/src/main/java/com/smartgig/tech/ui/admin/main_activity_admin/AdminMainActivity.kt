@@ -2,20 +2,17 @@ package com.smartgig.tech.ui.admin.main_activity_admin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.View
-import android.widget.Toast
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.navigation.NavigationView
 import com.smartgig.tech.R
 import com.smartgig.tech.databinding.ActivityAdminMainBinding
-import com.smartgig.tech.databinding.FragmentAdminHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.text.Typography.dagger
 
 @AndroidEntryPoint
 class AdminMainActivity : AppCompatActivity() {
@@ -24,6 +21,9 @@ class AdminMainActivity : AppCompatActivity() {
     private lateinit var navigationView: NavigationView
     private lateinit var navController: NavController
     private lateinit var appConfig: AppBarConfiguration
+    private lateinit var toogle:ActionBarDrawerToggle
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,61 +32,34 @@ class AdminMainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        //  Toolbar
-        val toolbar = binding.toolbarAdmin
-        toolbar.setNavigationIcon(R.drawable.hamburger)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+        setUpView()
 
-
-
-        // NavigationView And Navigation Controller
-        navigationView = binding.navigationViewAdmin
-        navController = Navigation.findNavController(this, R.id.fragment_admin)
-
-        //  AppBarConfiguration
-
-        val drawerLayout = binding.drawerLayoutAdmin
-
-//        val logout = findViewById<NavigationView>(R.id.logout_admin)
-
-//        appConfig = AppBarConfiguration(
-//            navController.graph,
-//            drawerLayout
-//        )
-
-        appConfig = AppBarConfiguration(
-            setOf(
-                R.id.adminHomeFragments,
-                R.id.adminLeaveRequestFragment,
-                R.id.logout_admin
-            ),
-            drawerLayout
-        )
-        
-
-
-//        appConfig = AppBarConfiguration(
-//            setOf(
-//                R.id.adminHomeFragments,
-//                R.id.adminLeaveRequestFragment,
-//
-//            ),drawerLayout
-//        )
-
-//        logout.setOnClickListener {
-//            Toast.makeText(this,"Logout Button", Toast.LENGTH_SHORT).show()
-//        }
-
-
-
-
-        NavigationUI.setupWithNavController(binding.toolbarAdmin, navController, appConfig)
-//        NavigationUI.setupWithNavController(binding.toolbarAdmin, navController, appConfig)
-        navigationView.setupWithNavController(navController)
     }
 
 
+    private fun setUpView() {
+        setSupportActionBar(binding.toolbarAdmin)
+        toogle = ActionBarDrawerToggle(
+            this,
+            binding.drawerLayoutAdmin,
+            R.string.drawer_Open,
+            R.string.drawer_Close
+
+        )
+        binding.drawerLayoutAdmin.addDrawerListener(toogle)
+        toogle.syncState()
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        navigationView.setNavigationItemSelectedListener {
+
+            when (it.itemId) {
+
+            }
+            true
+
+        }
+
+    }
 
 
     override fun onSupportNavigateUp(): Boolean {
