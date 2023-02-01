@@ -52,7 +52,7 @@ class AdminMainActivity : AppCompatActivity() {
 
             when (it.itemId) {
                 R.id.adminHomeFragments ->{
-                    changeFragment(AdminHomeFragment::class.java)
+//                    changeFragment(AdminHomeFragment::class.java)
                 }
             }
             true
