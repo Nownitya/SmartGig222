@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group >
+        <item
+            android:id="@+id/hrHomeFragment"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/hrLeaveRequestFragment"
+            android:title="@string/menu_leave_request" />
+    </group>
+    <group >
+        <item android:title="@string/menu_logout" />
+    </group>
+</menu>

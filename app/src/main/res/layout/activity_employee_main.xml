@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.employee.main_activity_employee.EmployeeMainActivity"
+    android:fitsSystemWindows="true"
+    android:id="@+id/drawer_layout_employee"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_white"
+            android:elevation="8dp"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+
+            >
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar_employee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:navigationIcon="@drawable/hamburger"
+                android:minHeight="?attr/actionBarSize"
+                app:popupTheme="@style/Widget.AppCompat.ActionButton.CloseMode"
+                >
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/actionbar_top"
+                    android:layout_gravity="center"
+                    />
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <fragment
+            android:id="@+id/fragment_employee"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph_admin"
+
+            />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view_employee"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/employee_nav_menu"
+        app:headerLayout="@layout/nav_header"
+
+        />
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
