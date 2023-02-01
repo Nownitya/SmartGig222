@@ -2,16 +2,14 @@ package com.smartgig.tech.ui.admin.main_activity_admin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.navigation.NavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.navigation.NavigationView
 import com.smartgig.tech.R
 import com.smartgig.tech.databinding.ActivityAdminMainBinding
+import com.smartgig.tech.ui.admin.home_page.AdminHomeFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -53,12 +51,19 @@ class AdminMainActivity : AppCompatActivity() {
         navigationView.setNavigationItemSelectedListener {
 
             when (it.itemId) {
-
+                R.id.adminHomeFragments ->{
+                    changeFragment(AdminHomeFragment::class.java)
+                }
             }
             true
 
         }
 
+    }
+
+    private fun changeFragment(fragment: Class<AdminHomeFragment>) {
+
+        TODO("Not yet implemented")
     }
 
 
