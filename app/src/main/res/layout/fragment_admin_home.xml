@@ -138,7 +138,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginStart="15dp"
                     app:cardCornerRadius="20dp"
-                    app:layout_constraintEnd_toStartOf="@id/card2"
+                    app:layout_constraintEnd_toStartOf="@id/admin_access_cardView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
@@ -171,7 +171,6 @@
                     app:cardCornerRadius="20dp"
                     android:layout_marginEnd="15dp"
                     android:layout_marginTop="30dp"
-
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/push_notification_cardView"
                     app:layout_constraintTop_toTopOf="parent">
@@ -204,7 +203,7 @@
                     app:cardCornerRadius="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/push_notification_cardView"
-                    app:layout_constraintEnd_toStartOf=""
+                    app:layout_constraintEnd_toStartOf="@id/assigned_proj_cardView"
 
                     >
 
@@ -229,7 +228,7 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/card2"
+                    android:id="@+id/assigned_proj_cardView"
                     android:layout_width="175dp"
                     android:layout_height="130dp"
                     app:cardCornerRadius="20dp"
@@ -255,7 +254,7 @@
                         android:layout_gravity="bottom|center_horizontal"
                         android:layout_marginBottom="10dp"
                         android:paddingHorizontal="10dp"
-                        android:text="Admin Access"
+                        android:text="Assigned Project"
                         android:textSize="20dp" />
 
 
@@ -272,6 +271,8 @@
                     app:layout_constraintTop_toBottomOf="@id/add_employee_cardView"
                     app:layout_constraintStart_toStartOf="@id/add_employee_cardView"
                     app:layout_constraintEnd_toEndOf="@id/add_employee_cardView"
+                    app:layout_constraintEnd_toStartOf="@id/assigned_proj_cardView"
+                    app:layout_constraintBottom_toBottomOf="parent"
 
                     >
 

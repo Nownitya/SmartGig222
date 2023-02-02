@@ -2,7 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <group >
+    <group
+        >
         <item
             android:id="@+id/adminHomeFragments"
             android:title="@string/menu_home" />
@@ -10,9 +11,44 @@
             android:id="@+id/adminLeaveRequestFragment"
             android:title="@string/menu_leave_request" />
     </group>
-    <group >
+    <group
+        >
         <item
-            android:id="@+id/logout_admin"
-            android:title="@string/menu_logout" />
+            android:id="@+id/adminEmployeeFragments"
+            android:title="Employee" />
     </group>
+    <group
+        >
+        <item
+            android:id="@+id/adminLaptopFragments"
+            android:title="Laptop" />
+        <item
+            android:id="@+id/adminAssignedLaptopFragment"
+            android:title="Assigned Laptop" />
+    </group>
+    <group
+        >
+        <item
+            android:id="@+id/adminHikeEligibleEmployeeFragments"
+            android:title="Hike Eligible Employee" />
+
+    </group>
+    <group
+        >
+        <item
+            android:id="@+id/adminClientBillingFragments"
+            android:title="Client Billing" />
+
+    </group>
+
+    <group
+        >
+        <item
+            android:id="@+id/adminClientFragments"
+            android:title="Client" />
+        <item
+            android:id="@+id/adminProjectFragment"
+            android:title="Project" />
+    </group>
+
 </menu>
