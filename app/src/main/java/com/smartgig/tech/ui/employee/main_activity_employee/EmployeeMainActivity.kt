@@ -43,12 +43,16 @@ class EmployeeMainActivity : AppCompatActivity() {
         //  AppBarConfiguration
         val drawerLayout = binding.drawerLayoutEmployee
         appConfig = AppBarConfiguration(
-            setOf(
-                R.id.adminHomeFragments,
-                R.id.adminLeaveRequestFragment
-
-            ),drawerLayout
+            navController.graph,drawerLayout
         )
+//        val drawerLayout = binding.drawerLayoutEmployee
+//        appConfig = AppBarConfiguration(
+//            setOf(
+//                R.id.adminHomeFragments,
+//                R.id.adminLeaveRequestFragment
+//
+//            ),drawerLayout
+//        )
 
         NavigationUI.setupWithNavController(binding.toolbarEmployee, navController, appConfig)
         navigationView.setupWithNavController(navController)

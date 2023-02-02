@@ -38,14 +38,19 @@ class HRMainActivity : AppCompatActivity() {
         navController = Navigation.findNavController(this, R.id.fragment_admin)
 
         //  AppBarConfiguration
+
         val drawerLayout = binding.drawerLayoutHr
         appConfig = AppBarConfiguration(
-            setOf(
-                R.id.adminHomeFragments,
-                R.id.adminLeaveRequestFragment
-
-            ),drawerLayout
+            navController.graph,drawerLayout
         )
+//        val drawerLayout = binding.drawerLayoutHr
+//        appConfig = AppBarConfiguration(
+//            setOf(
+//                R.id.adminHomeFragments,
+//                R.id.adminLeaveRequestFragment
+//
+//            ),drawerLayout
+//        )
 
         NavigationUI.setupWithNavController(binding.toolbarHr, navController, appConfig)
         navigationView.setupWithNavController(navController)
